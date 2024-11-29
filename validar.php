@@ -9,7 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($rs == null) {
             $_SESSION['erro'] = 'Credenciais erradas';
             header('Location: login.php');
-        } else {
+        } 
+        else if($rs['conta_ativa'] == 0){
+            $_SESSION['erro'] = 'Conta Desativada';
+            header('Location: login.php');
+        }
+        else {
             $_SESSION['idutilizador'] = $rs['idutilizador'];
             $_SESSION['utilizador'] = $rs['utilizador'];
             $_SESSION['tipo'] = $rs['tipo']; // 0 admin, 1 moderador, 2 utilizador
