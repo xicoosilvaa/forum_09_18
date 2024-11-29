@@ -13,7 +13,7 @@
             else {
                 $_SESSION['idutilizador'] = $rs['idutilizador'];
                 $_SESSION['utilizador'] = $rs['utilizador'];
-                $_SESSION['tipo'] = $rs['tipo']; // 0 admin, 1 utilizador
+                $_SESSION['tipo'] = $rs['tipo']; // 0 admin, 1 moderador, 1 utilizador
                 header('Location: topicos.php');
             }
         }
